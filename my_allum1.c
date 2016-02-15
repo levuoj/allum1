@@ -5,13 +5,21 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Mon Feb 15 15:19:47 2016 jouvel_a
+** Last update Mon Feb 15 16:09:04 2016 jouvel_a
 */
 
 #include "include.h"
 
 int	player_turn(int *array)
 {
+  /* int	line; */
+  /* char	buffer[100]; */
+
+  /* my_printf("\nYour turn:\nLine : "); */
+  /* line = my_getnbr(read(0, buffer,2); */
+  /* if (nb > 4 && nb < 0) */
+  /*   { */
+  /*   } */
   return (0);
 }
 
