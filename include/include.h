@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Nov 23 16:53:00 2015 Anthony JOUVEL
-** Last update Tue Jan  5 14:54:15 2016 Anthony JOUVEL
+** Last update Mon Feb 15 15:00:01 2016 jouvel_a
 */
 
 #ifndef INCLUDE_H_
@@ -29,5 +29,6 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include "my.h"
+#include "allum1.h"
 
 #endif /* !INCLUDE_H_ */

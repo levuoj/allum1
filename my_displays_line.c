@@ -1,0 +1,91 @@
+/*
+** my_displays_line.c for my_display_line in /home/jouvel_a/rendu/allum1/CPE_2015_Allum1
+**
+** Made by jouvel_a
+** Login   <jouvel_a@epitech.net>
+**
+** Started on  Mon Feb 15 14:55:03 2016 jouvel_a
+** Last update Mon Feb 15 15:20:45 2016 jouvel_a
+*/
+
+#include "include.h"
+
+void	first_line(int matches)
+{
+  int	index;
+
+  index = 0;
+  my_printf("*");
+  while (index < 7)
+    {
+      if (index == 3 && matches == 1)
+	{
+	  my_printf("|");
+	  index++;
+	}
+      my_printf(" ");
+      index++;
+    }
+  my_printf("*\n");
+}
+
+void	second_line(int matches)
+{
+  int	index;
+
+  index = 0;
+  my_printf("*");
+  while (index < 7)
+    {
+      while (index >= 2 && matches > 0)
+	{
+	  my_printf("|");
+	  matches--;
+	  index++;
+	}
+      my_printf(" ");
+      index++;
+    }
+  my_printf("*\n");
+}
+
+void	third_line(int matches)
+{
+  int	index;
+
+  index = 0;
+  my_printf("*");
+  while (index < 7)
+    {
+      while (index >= 1 && matches > 0)
+	{
+	  my_printf("|");
+	  matches--;
+	  index++;
+	}
+      my_printf(" ");
+      index++;
+    }
+  my_printf("*\n");
+}
+
+void	fourth_line(int matches)
+{
+  int	index;
+
+  index = 0;
+  my_printf("*");
+  while (index < 7)
+    {
+      while (matches > 0)
+	{
+	  my_printf("|");
+	  matches--;
+	  index++;
+	}
+      if (index < 7)
+	my_printf(" ");
+      index++;
+    }
+  my_printf("*\n");
+}
