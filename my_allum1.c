@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Wed Feb 17 14:48:06 2016 jouvel_a
+** Last update Wed Feb 17 14:58:46 2016 jouvel_a
 */
 
 #include "include.h"
@@ -31,7 +31,7 @@ int		line_test(int *array)
   if (line > 4 || line == 0)
     return (error("Error: this line is out of range\n"));
   if (array[line -1] == 0)
-    return (error ("Error: not enough matches on this line\n"));
+    return (error ("Error: this line is empty\n"));
   return (line);
 }
 
