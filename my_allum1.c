@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Wed Feb 17 14:58:46 2016 jouvel_a
+** Last update Wed Feb 17 19:24:00 2016 jouvel_a
 */
 
 #include "include.h"
@@ -85,31 +85,29 @@ int		player_turn(int *array)
 
 int		ia_turn(int *array)
 {
-  int		line;
-  int		matches;
+  int		line_matches[2] = {3, 0};
   int		test;
 
   test = 0;
-  line = 3;
   while (test == 0)
     {
-      if (array[line] != 0)
+      if (array[line_matches[0]] != 0)
 	{
-	  matches = array[line];
+	  line_matches[1] = array[line_matches[0]];
 	  test = 1;
 	}
       else
-	line--;
+	line_matches[0]--;
     }
-  if (matches > 1)
+  if (line_matches[1] > 1)
     {
-      array[line] = 1;
-      matches--;
+      array[line_matches[0]] = 1;
+      line_matches[1]--;
     }
   else
-    array[line] = 0;
-  my_printf("AI's turn...\nAI removed %i match(es) from line %i\n", matches,
-	    line + 1);
+    array[line_matches[0]] = 0;
+  my_printf("AI's turn...\nAI removed %i match(es) from line %i\n",
+	    line_matches[1], line_matches[0] + 1);
   my_display(array);
   return (0);
 }

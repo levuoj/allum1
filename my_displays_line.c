@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 14:55:03 2016 jouvel_a
-** Last update Mon Feb 15 18:49:08 2016 jouvel_a
+** Last update Wed Feb 17 18:59:09 2016 jouvel_a
 */
 
 #include "include.h"
@@ -90,7 +90,7 @@ void	fourth_line(int matches)
   my_printf("*\n");
 }
 
-void    my_display(int *array)
+void	my_display(int *array)
 {
   my_printf("*********\n");
   first_line(array[0]);
