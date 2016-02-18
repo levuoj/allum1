@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Thu Feb 18 11:33:31 2016 jouvel_a
+** Last update Thu Feb 18 13:48:35 2016 jouvel_a
 */
 
 #include "include.h"
@@ -19,7 +19,7 @@ int		line_test(int *array)
   index = 0;
   my_printf("Line: ");
   if (read(0, buffer, 999) == -1)
-    return (error("Error : read has failed"));
+    return (error("Error: read has failed"));
   while (buffer[index] != '\n')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
@@ -44,7 +44,7 @@ int		matches_test(int matches)
   index = 0;
   my_printf("Matches: ");
   if (read(0, buffer, 99) == -1)
-    return (error("Error : read has failed"));
+    return (error("Error: read has failed"));
   while (buffer[index] != '\n')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
