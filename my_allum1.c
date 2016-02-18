@@ -5,20 +5,20 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Wed Feb 17 19:24:00 2016 jouvel_a
+** Last update Thu Feb 18 11:33:31 2016 jouvel_a
 */
 
 #include "include.h"
 
 int		line_test(int *array)
 {
-  int		index;
-  int		line;
-  char		buffer[100];
+  unsigned int	index;
+  unsigned int	line;
+  char		buffer[1000];
 
   index = 0;
   my_printf("Line: ");
-  if (read(0, buffer, 99) == -1)
+  if (read(0, buffer, 999) == -1)
     return (error("Error : read has failed"));
   while (buffer[index] != '\n')
     {

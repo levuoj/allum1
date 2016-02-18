@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Oct 12 11:22:25 2015 Anthony JOUVEL
-** Last update Sun Nov 22 17:56:32 2015 Anthony JOUVEL
+** Last update Thu Feb 18 11:23:10 2016 jouvel_a
 */
 
 #include "../include/my.h"
@@ -31,7 +31,7 @@ int	my_getnbr(char *str)
     return (0);
   while ((str[i] == '-' || str[i] == '+') && str[i] != 0)
     i = i + 1;
-  if (str[i - 1] == '-')
+  if (i && str[i - 1] == '-')
     nb = -1;
   while (str_i(str[i]) == 1 && str[i] != 0)
     {
