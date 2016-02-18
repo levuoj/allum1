@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 15:00:17 2016 jouvel_a
-** Last update Wed Feb 17 15:02:05 2016 jouvel_a
+** Last update Thu Feb 18 14:16:40 2016 jouvel_a
 */
 
 #ifndef ALLUM1_H_
@@ -13,7 +13,7 @@
 
 int	error(char *message);
 int	ending(char *message);
-int	matches_test(int matches);
+int	matches_test(unsigned int matches);
 int	line_test(int *array);
 int	player_turn(int *array);
 int	ia_turn(int *array);

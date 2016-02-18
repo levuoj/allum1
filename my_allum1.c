@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Thu Feb 18 13:48:35 2016 jouvel_a
+** Last update Thu Feb 18 14:32:23 2016 jouvel_a
 */
 
 #include "include.h"
@@ -14,11 +14,11 @@ int		line_test(int *array)
 {
   unsigned int	index;
   unsigned int	line;
-  char		buffer[1000];
+  char		buffer[999];
 
   index = 0;
   my_printf("Line: ");
-  if (read(0, buffer, 999) == -1)
+  if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed"));
   while (buffer[index] != '\n')
     {
@@ -35,15 +35,15 @@ int		line_test(int *array)
   return (line);
 }
 
-int		matches_test(int matches)
+int		matches_test(unsigned int matches)
 {
-  char		buffer[100];
-  int		index;
-  int		choice;
+  char		buffer[999];
+  unsigned int	index;
+  unsigned int	choice;
 
   index = 0;
   my_printf("Matches: ");
-  if (read(0, buffer, 99) == -1)
+  if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed"));
   while (buffer[index] != '\n')
     {
@@ -62,8 +62,8 @@ int		matches_test(int matches)
 
 int		player_turn(int *array)
 {
-  int		line;
-  int		matches;
+  unsigned int	line;
+  unsigned int	matches;
   static int	test;
 
   if (test == 0)

@@ -5,7 +5,7 @@
 ## Login   <jouvel_a@epitech.net>
 ##
 ## Started on  Mon Feb  1 10:59:20 2016 Anthony JOUVEL
-## Last update Wed Feb 17 14:39:25 2016 jouvel_a
+## Last update Thu Feb 18 14:26:21 2016 jouvel_a
 ##
 
 RM		=	rm -f
@@ -67,7 +67,7 @@ OBJS_ALLUM1	=	$(SRCS_ALLUM1:.c=.o)
 
 OBJS_LIB	=	$(SRCS_LIB:.c=.o)
 
-CFLAGS		+=	-Wextra -Wall -Werror
+CFLAGS		+=	-Wextra -Wall -Werror -g3
 CFLAGS		+=	-I include/
 #CFLAGS		+=	-ansi -pedantic
 
