@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Thu Feb 18 14:32:23 2016 jouvel_a
+** Last update Thu Feb 18 17:09:47 2016 jouvel_a
 */
 
 #include "include.h"
@@ -20,6 +20,8 @@ int		line_test(int *array)
   my_printf("Line: ");
   if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed"));
+  if (buffer[0] == '\n')
+    return (error("Error: invalid input (positive number expected)\n"));
   while (buffer[index] != '\n')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
@@ -54,7 +56,7 @@ int		matches_test(unsigned int matches)
     }
   choice = my_getnbr(buffer);
   if (choice == 0)
-    return (error("Error: you have to remove at least one matches\n"));
+    return (error("Error: you have to remove at least one match\n"));
   if (choice > matches)
     return (error("Error: not enough matches on this line\n"));
   return (choice);

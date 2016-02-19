@@ -5,7 +5,7 @@
 ## Login   <jouvel_a@epitech.net>
 ##
 ## Started on  Mon Feb  1 10:59:20 2016 Anthony JOUVEL
-## Last update Thu Feb 18 14:26:21 2016 jouvel_a
+## Last update Fri Feb 19 12:38:31 2016 jouvel_a
 ##
 
 RM		=	rm -f
@@ -59,9 +59,9 @@ SRCS_LIB	=	lib/my_printf_flags_1.c \
 			lib/disp_stdarg.c \
 			lib/my_printf.c
 
-SRCS_ALLUM1	=	my_allum1.c \
-			my_messages.c \
-			my_displays_line.c
+SRCS_ALLUM1	=	src/my_allum1.c \
+			src/my_messages.c \
+			src/my_displays_line.c
 
 OBJS_ALLUM1	=	$(SRCS_ALLUM1:.c=.o)
 
