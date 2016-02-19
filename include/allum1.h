@@ -5,13 +5,13 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 15:00:17 2016 jouvel_a
-** Last update Fri Feb 19 14:25:52 2016 jouvel_a
+** Last update Fri Feb 19 15:59:34 2016 jouvel_a
 */
 
 #ifndef ALLUM1_H_
 # define ALLUM1_H_
 
-int	error(char *message);
+int	error(char *message, int nb);
 int	ending(char *message);
 int	matches_test(unsigned int matches);
 int	line_test(int *array);

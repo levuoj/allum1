@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Fri Feb 19 14:48:59 2016 jouvel_a
+** Last update Fri Feb 19 16:35:51 2016 jouvel_a
 */
 
 #include "include.h"
@@ -19,21 +19,21 @@ int		line_test(int *array)
   index = 0;
   my_printf("Line: ");
   if (read(0, buffer, 1000) <= 0)
-    return (error("Error: read has failed"));
+    return (error("Error: read has failed\n", 15));
   if (buffer[0] == '\n')
-    return (error("Error: invalid input (positive number expected)\n"));
+    return (error("Error: invalid input (positive number expected)\n", 42));
   while (buffer[index] != '\n')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
 	index++;
       else
-	return (error("Error: invalid input (positive number expected)\n"));
+	return (error("Error: invalid input (positive number expected)\n", 42));
     }
   line = my_getnbr(buffer);
   if (line > 4 || line == 0)
-    return (error("Error: this line is out of range\n"));
+    return (error("Error: this line is out of range\n", 42));
   if (array[line -1] == 0)
-    return (error ("Error: this line is empty\n"));
+    return (error ("Error: this line is empty\n", 42));
   return (line);
 }
 
@@ -46,19 +46,19 @@ int		matches_test(unsigned int matches)
   index = 0;
   my_printf("Matches: ");
   if (read(0, buffer, 1000) <= 0)
-    return (error("Error: read has failed"));
+    return (error("Error: read has failed", 42));
   while (buffer[index] != '\n')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
 	index++;
       else
-	return (error("Error: invalid input (positive number expected)\n"));
+	return (error("Error: invalid input (positive number expected)\n", 42));
     }
   choice = my_getnbr(buffer);
   if (choice == 0)
-    return (error("Error: you have to remove at least one match\n"));
+    return (error("Error: you have to remove at least one match\n", 42));
   if (choice > matches)
-    return (error("Error: not enough matches on this line\n"));
+    return (error("Error: not enough matches on this line\n", 42));
   return (choice);
 }
 
@@ -70,7 +70,11 @@ int		player_turn(int *array)
 
   if (test == 0)
     my_printf("\nYour turn:\n");
-  while ((line = line_test(array)) == 42);
+  while ((line = line_test(array)) >= 15)
+    {
+      if (line == 15)
+	return (error("Error : do not use 'echo | ./allum1'\n", 42));
+    }
   line--;
   if ((matches = matches_test(array[line])) == 42)
     {
@@ -115,18 +119,19 @@ int		ia_turn(int *array)
 
 int		main()
 {
-  int		array[4];
+  int		array[4] = {1, 3, 5, 7};
   int		end;
+  int		test_error;
 
-  array[0] = 1;
-  array[1] = 3;
-  array[2] = 5;
-  array[3] = 7;
   my_display(array);
   end = array[0] + array[1] + array[2] + array[3];
   while (42)
     {
-      while (player_turn(array) == 1);
+      while ((test_error = player_turn(array)) != 0)
+	{
+	  if (test_error == 42)
+	    return (42);
+	}
       end = array[0] + array[1] + array[2] + array[3];
       if (end == 0)
 	return (ending("You lost, too bad..\n"));

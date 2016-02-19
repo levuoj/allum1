@@ -5,15 +5,15 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 20:43:12 2016 jouvel_a
-** Last update Fri Feb 19 14:50:16 2016 jouvel_a
+** Last update Fri Feb 19 16:11:46 2016 jouvel_a
 */
 
 #include "include.h"
 
-int	error(char *message)
+int	error(char *message, int nb)
 {
   my_printf("%s", message);
-  return (42);
+  return (nb);
 }
 
 int	ending(char *message)

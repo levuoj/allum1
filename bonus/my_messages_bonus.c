@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 20:43:12 2016 jouvel_a
-** Last update Fri Feb 19 14:32:31 2016 jouvel_a
+** Last update Fri Feb 19 16:46:05 2016 jouvel_a
 */
 
 #include "include.h"
@@ -15,10 +15,10 @@
 #define normal "\033[00m"
 #define bold "\033[01m"
 
-int	error(char *message)
+int	error(char *message, int nb)
 {
   my_printf(red "%s" normal, message);
-  return (42);
+  return (nb);
 }
 
 int	ending(char *message)
