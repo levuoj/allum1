@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 15:00:17 2016 jouvel_a
-** Last update Thu Feb 18 14:16:40 2016 jouvel_a
+** Last update Fri Feb 19 14:25:52 2016 jouvel_a
 */
 
 #ifndef ALLUM1_H_
@@ -21,6 +21,6 @@ void	first_line(int matches);
 void	second_line(int matches);
 void	third_line(int matches);
 void	fourth_line(int matches);
-void	my_display(int *array);
+int	my_display(int *array);
 
 #endif /* !ALLUM1_H_ */

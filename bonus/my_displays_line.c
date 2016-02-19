@@ -5,10 +5,13 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 14:55:03 2016 jouvel_a
-** Last update Fri Feb 19 14:49:48 2016 jouvel_a
+** Last update Fri Feb 19 14:25:34 2016 jouvel_a
 */
 
 #include "include.h"
+
+#define yellow "\033[00;33m"
+#define normal "\033[00m"
 
 void	first_line(int matches)
 {
@@ -20,7 +23,7 @@ void	first_line(int matches)
     {
       if (index == 3 && matches == 1)
 	{
-	  my_printf("|");
+	  my_printf(yellow "|" normal);
 	  index++;
 	}
       my_printf(" ");
@@ -39,7 +42,7 @@ void	second_line(int matches)
     {
       while (index >= 2 && matches > 0)
 	{
-	  my_printf("|");
+	  my_printf(yellow "|" normal);
 	  matches--;
 	  index++;
 	}
@@ -59,7 +62,7 @@ void	third_line(int matches)
     {
       while (index >= 1 && matches > 0)
 	{
-	  my_printf("|");
+	  my_printf(yellow "|" normal);
 	  matches--;
 	  index++;
 	}
@@ -79,7 +82,7 @@ void	fourth_line(int matches)
     {
       while (matches > 0)
 	{
-	  my_printf("|");
+	  my_printf(yellow "|" normal);
 	  matches--;
 	  index++;
 	}

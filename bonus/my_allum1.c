@@ -5,10 +5,15 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Fri Feb 19 14:48:59 2016 jouvel_a
+** Last update Fri Feb 19 14:26:12 2016 jouvel_a
 */
 
 #include "include.h"
+
+#define green "\033[00;32m"
+#define blue "\033[00;34m"
+#define normal "\033[00m"
+#define bold "\033[01m"
 
 int		line_test(int *array)
 {
@@ -17,7 +22,7 @@ int		line_test(int *array)
   char		buffer[999];
 
   index = 0;
-  my_printf("Line: ");
+  my_printf(blue "Line: " normal);
   if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed"));
   if (buffer[0] == '\n')
@@ -44,7 +49,7 @@ int		matches_test(unsigned int matches)
   unsigned int	choice;
 
   index = 0;
-  my_printf("Matches: ");
+  my_printf(blue "Matches: " normal);
   if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed"));
   while (buffer[index] != '\n')
@@ -69,7 +74,7 @@ int		player_turn(int *array)
   static int	test;
 
   if (test == 0)
-    my_printf("\nYour turn:\n");
+    my_printf(blue "\nYour turn:\n" normal);
   while ((line = line_test(array)) == 42);
   line--;
   if ((matches = matches_test(array[line])) == 42)
@@ -77,7 +82,8 @@ int		player_turn(int *array)
       test = 1;
       return (1);
     }
-  my_printf("Player removed %i match(es) from line %i\n", matches, line);
+  my_printf(blue bold "Player removed %i match(es) from line %i\n" normal,
+	    matches, line);
   array[line] = array[line] - matches;
   my_display(array);
   test = 0;
@@ -107,9 +113,9 @@ int		ia_turn(int *array)
     }
   else
     array[line_matches[0]] = 0;
-  my_printf("AI's turn...\n");
-  my_printf("AI removed %i match(es) from line %i\n", line_matches[1],
-	    line_matches[0] + 1);
+  my_printf(green "AI's turn...\n" normal);
+  my_printf(green bold "AI removed %i match(es) from line %i\n" normal,
+	    line_matches[1], line_matches[0] + 1);
   return (my_display(array));
 }
 
