@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Fri Feb 19 16:35:51 2016 jouvel_a
+** Last update Fri Feb 19 17:33:47 2016 jouvel_a
 */
 
 #include "include.h"
@@ -47,6 +47,8 @@ int		matches_test(unsigned int matches)
   my_printf("Matches: ");
   if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed", 42));
+  if (buffer[0] == '\n')
+    return (error("Error: invalid input (positive number expected)\n", 42));
   while (buffer[index] != '\n')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
