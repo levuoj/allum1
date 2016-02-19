@@ -5,7 +5,7 @@
 ## Login   <jouvel_a@epitech.net>
 ##
 ## Started on  Mon Feb  1 10:59:20 2016 Anthony JOUVEL
-## Last update Fri Feb 19 15:04:24 2016 jouvel_a
+## Last update Fri Feb 19 15:14:32 2016 jouvel_a
 ##
 
 RM		=	rm -f
@@ -99,6 +99,7 @@ clean		:
 fclean		:	clean
 			$(RM) $(ALLUM1)
 			$(RM) $(LIBMY)
+			$(RM) $(BONUS)
 
 re		:	fclean all
 
