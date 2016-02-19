@@ -5,7 +5,7 @@
 ## Login   <jouvel_a@epitech.net>
 ##
 ## Started on  Mon Feb  1 10:59:20 2016 Anthony JOUVEL
-## Last update Fri Feb 19 12:38:31 2016 jouvel_a
+## Last update Fri Feb 19 15:04:24 2016 jouvel_a
 ##
 
 RM		=	rm -f
@@ -13,6 +13,8 @@ RM		=	rm -f
 CC		=	gcc -o
 
 ALLUM1		=	allum1
+
+BONUS		=	allum1_bonus
 
 LIBMY		=	lib/libmy.a
 
@@ -63,15 +65,21 @@ SRCS_ALLUM1	=	src/my_allum1.c \
 			src/my_messages.c \
 			src/my_displays_line.c
 
+SRCS_BONUS	=	bonus/my_allum1_bonus.c \
+			bonus/my_messages_bonus.c \
+			bonus/my_displays_line_bonus.c
+
 OBJS_ALLUM1	=	$(SRCS_ALLUM1:.c=.o)
 
 OBJS_LIB	=	$(SRCS_LIB:.c=.o)
+
+OBJS_BONUS	=	$(SRCS_BONUS:.c=.o)
 
 CFLAGS		+=	-Wextra -Wall -Werror -g3
 CFLAGS		+=	-I include/
 #CFLAGS		+=	-ansi -pedantic
 
-all		:	$(LIBMY) $(ALLUM1)
+all		:	$(LIBMY) $(ALLUM1) $(BONUS)
 
 $(LIBMY)	:	$(OBJS_LIB)
 			ar rc $(LIBMY) $(OBJS_LIB)
@@ -80,9 +88,13 @@ $(LIBMY)	:	$(OBJS_LIB)
 $(ALLUM1)	:	$(OBJS_ALLUM1)
 			$(CC) $(ALLUM1) $(OBJS_ALLUM1) $(LIBMY)
 
+$(BONUS)	:	$(OBJS_BONUS)
+			$(CC) $(BONUS) $(OBJS_BONUS) $(LIBMY)
 
 clean		:
-			$(RM) $(OBJS_ALLUM1) $(OBJS_LIB)
+			$(RM) $(OBJS_ALLUM1)
+			$(RM) $(OBJS_LIB)
+			$(RM) $(OBJS_BONUS)
 
 fclean		:	clean
 			$(RM) $(ALLUM1)
