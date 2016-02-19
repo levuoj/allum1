@@ -5,19 +5,22 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 20:43:12 2016 jouvel_a
-** Last update Fri Feb 19 16:46:05 2016 jouvel_a
+** Last update Fri Feb 19 16:55:09 2016 jouvel_a
 */
 
 #include "include.h"
 
 #define red "\033[00;31m"
-#define magenta "\033[00;35m"
+#define magenta "\033[01;35m"
 #define normal "\033[00m"
 #define bold "\033[01m"
 
 int	error(char *message, int nb)
 {
-  my_printf(red "%s" normal, message);
+  if (nb == 10)
+    my_printf(red bold "%s" normal, message);
+  else
+    my_printf(red "%s" normal, message);
   return (nb);
 }
 

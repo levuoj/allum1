@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Fri Feb 19 16:42:31 2016 jouvel_a
+** Last update Fri Feb 19 16:54:53 2016 jouvel_a
 */
 
 #include "include.h"
@@ -78,7 +78,7 @@ int		player_turn(int *array)
   while ((line = line_test(array)) >= 15)
     {
       if (line == 15)
-	return (error("Error : do not use 'echo | ./allum1'\n", 42));
+	return (error("Error : do not use 'echo | ./allum1'\n", 10));
     }
   line--;
   if ((matches = matches_test(array[line])) == 42)
@@ -135,7 +135,7 @@ int		main()
     {
       while ((test_error = player_turn(array)) != 0)
 	{
-	  if (test_error == 42)
+	  if (test_error == 10)
 	    return (42);
 	}
       end = array[0] + array[1] + array[2] + array[3];
