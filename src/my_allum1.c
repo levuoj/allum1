@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Sat Feb 20 17:29:04 2016 jouvel_a
+** Last update Sat Feb 20 17:40:30 2016 jouvel_a
 */
 
 #include "include.h"
@@ -141,6 +141,6 @@ int		main()
       ia_turn(array);
       end = array[0] + array[1] + array[2] + array[3];
       if (end == 0)
-	return (ending("I lost.. snif.. but I’ll get you next time!!\n\n"));
+	return (ending("I lost.. snif.. but I'll get you next time!!\n\n"));
     }
 }
