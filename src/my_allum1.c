@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Fri Feb 19 17:33:47 2016 jouvel_a
+** Last update Sat Feb 20 16:03:08 2016 jouvel_a
 */
 
 #include "include.h"
@@ -83,7 +83,7 @@ int		player_turn(int *array)
       test = 1;
       return (1);
     }
-  my_printf("Player removed %i match(es) from line %i\n", matches, line);
+  my_printf("Player removed %i match(es) from line %i\n", matches, line + 1);
   array[line] = array[line] - matches;
   my_display(array);
   test = 0;
