@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Sat Feb 20 16:04:05 2016 jouvel_a
+** Last update Sat Feb 20 17:29:51 2016 jouvel_a
 */
 
 #include "include.h"
@@ -142,11 +142,11 @@ int		main()
 	}
       end = array[0] + array[1] + array[2] + array[3];
       if (end == 0)
-	return (ending("You lost, too bad..\n"));
+	return (ending("You lost, too bad..\n\n"));
       my_printf("\n");
       ia_turn(array);
       end = array[0] + array[1] + array[2] + array[3];
       if (end == 0)
-	return (ending("I lost.. snif.. but I’ll get you next time!!\n"));
+	return (ending("I lost.. snif.. but I’ll get you next time!!\n\n"));
     }
 }
