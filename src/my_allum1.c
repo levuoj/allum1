@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Sat Feb 20 17:40:30 2016 jouvel_a
+** Last update Sun Feb 21 22:08:28 2016 jouvel_a
 */
 
 #include "include.h"
@@ -19,7 +19,7 @@ int		line_test(int *array)
   index = 0;
   my_printf("Line: ");
   if (read(0, buffer, 1000) <= 0)
-    return (error("Error: read has failed\n", 15));
+    return (15);
   if (buffer[0] == '\n')
     return (error("Error: invalid input (positive number expected)\n", 42));
   while (buffer[index] != '\n')
@@ -46,7 +46,7 @@ int		matches_test(unsigned int matches)
   index = 0;
   my_printf("Matches: ");
   if (read(0, buffer, 1000) <= 0)
-    return (error("Error: read has failed", 42));
+    return (42);
   if (buffer[0] == '\n')
     return (error("Error: invalid input (positive number expected)\n", 42));
   while (buffer[index] != '\n')
