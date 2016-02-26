@@ -5,7 +5,7 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Sun Nov 22 17:47:52 2015 Anthony JOUVEL
-** Last update Tue Feb  2 15:21:17 2016 Anthony JOUVEL
+** Last update Fri Feb 26 14:10:09 2016 jouvel_a
 */
 
 #ifndef MY_H_
@@ -20,6 +20,8 @@ typedef struct	s_printf
   int		(*ptr)(va_list op, unsigned int len);
 }		t_printf;
 
+int		my_same_str(char *s1, char *s2);
+char		*get_next_line(const int fd);
 int		flag_i_d(va_list ap, unsigned int len);
 int		flag_x(va_list ap, unsigned int len);
 int		flag_o(va_list ap, unsigned int len);

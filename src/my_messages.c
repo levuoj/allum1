@@ -5,10 +5,11 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 20:43:12 2016 jouvel_a
-** Last update Fri Feb 19 16:11:46 2016 jouvel_a
+** Last update Fri Feb 26 04:01:58 2016 jouvel_a
 */
 
 #include "include.h"
+#include "allum1.h"
 
 int	error(char *message, int nb)
 {

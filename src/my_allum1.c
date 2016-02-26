@@ -5,24 +5,25 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Sun Feb 21 22:08:28 2016 jouvel_a
+** Last update Fri Feb 26 04:01:32 2016 jouvel_a
 */
 
 #include "include.h"
+#include "allum1.h"
 
 int		line_test(int *array)
 {
   unsigned int	index;
   unsigned int	line;
-  char		buffer[999];
+  char		*buffer;
 
   index = 0;
   my_printf("Line: ");
-  if (read(0, buffer, 1000) <= 0)
+  if ((buffer = get_next_line(0)) == NULL)
     return (15);
-  if (buffer[0] == '\n')
+  if (buffer[0] == '\0')
     return (error("Error: invalid input (positive number expected)\n", 42));
-  while (buffer[index] != '\n')
+  while (buffer[index] != '\0')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
 	index++;
@@ -39,17 +40,17 @@ int		line_test(int *array)
 
 int		matches_test(unsigned int matches)
 {
-  char		buffer[999];
+  char		*buffer;
   unsigned int	index;
   unsigned int	choice;
 
   index = 0;
   my_printf("Matches: ");
-  if (read(0, buffer, 1000) <= 0)
+  if ((buffer = get_next_line(0)) == NULL)
     return (42);
-  if (buffer[0] == '\n')
+  if (buffer[0] == '\0')
     return (error("Error: invalid input (positive number expected)\n", 42));
-  while (buffer[index] != '\n')
+  while (buffer[index] != '\0')
     {
       if ((buffer[index] >= '0') && (buffer[index] <= '9'))
 	index++;
@@ -75,7 +76,7 @@ int		player_turn(int *array)
   while ((line = line_test(array)) >= 15)
     {
       if (line == 15)
-	return (error("Error : do not use 'echo | ./allum1'\n", 42));
+	return (error("Error: not enough matches on this line\n", 42));
     }
   line--;
   if ((matches = matches_test(array[line])) == 42)

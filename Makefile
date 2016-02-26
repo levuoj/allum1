@@ -5,7 +5,7 @@
 ## Login   <jouvel_a@epitech.net>
 ##
 ## Started on  Mon Feb  1 10:59:20 2016 Anthony JOUVEL
-## Last update Sun Feb 21 22:04:16 2016 jouvel_a
+## Last update Fri Feb 26 14:40:44 2016 jouvel_a
 ##
 
 RM		=	rm -f
@@ -59,15 +59,19 @@ SRCS_LIB	=	lib/my_printf_flags_1.c \
 			lib/my_aff_params.c \
 			lib/sum_stdarg.c \
 			lib/disp_stdarg.c \
-			lib/my_printf.c
+			lib/my_printf.c \
+			lib/get_next_line.c \
+			lib/my_same_str.c
 
 SRCS_ALLUM1	=	src/my_allum1.c \
 			src/my_messages.c \
 			src/my_displays_line.c
 
 SRCS_BONUS	=	bonus/my_allum1_bonus.c \
+			bonus/my_message2_bonus.c \
 			bonus/my_messages_bonus.c \
-			bonus/my_displays_line_bonus.c
+			bonus/my_displays_line_bonus.c \
+			bonus/my_second_player.c
 
 OBJS_ALLUM1	=	$(SRCS_ALLUM1:.c=.o)
 

@@ -5,24 +5,25 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb  8 12:03:48 2016 Anthony JOUVEL
-** Last update Sat Feb 20 17:29:51 2016 jouvel_a
+** Last update Fri Feb 26 14:37:55 2016 jouvel_a
 */
 
 #include "include.h"
+#include "allum1_bonus.h"
 
 #define green "\033[00;32m"
 #define blue "\033[00;34m"
 #define normal "\033[00m"
 #define bold "\033[01m"
 
-int		line_test(int *array)
+int		line_test(int *array, char *color)
 {
   unsigned int	index;
   unsigned int	line;
   char		buffer[999];
 
   index = 0;
-  my_printf(blue "Line: " normal);
+  line_message(color);
   if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed\n", 15));
   if (buffer[0] == '\n')
@@ -42,14 +43,14 @@ int		line_test(int *array)
   return (line);
 }
 
-int		matches_test(unsigned int matches)
+int		matches_test(unsigned int matches, char *color)
 {
   char		buffer[999];
   unsigned int	index;
   unsigned int	choice;
 
   index = 0;
-  my_printf(blue "Matches: " normal);
+  matches_message(color);
   if (read(0, buffer, 1000) <= 0)
     return (error("Error: read has failed", 42));
   if (buffer[0] == '\n')
@@ -69,27 +70,26 @@ int		matches_test(unsigned int matches)
   return (choice);
 }
 
-int		player_turn(int *array)
+int		player_turn(int *array, int pvp)
 {
   unsigned int	line;
   unsigned int	matches;
   static int	test;
 
   if (test == 0)
-    my_printf(blue "\nYour turn:\n" normal);
-  while ((line = line_test(array)) >= 15)
+    player_1_message_turn(pvp);
+  while ((line = line_test(array, blue)) >= 15)
     {
       if (line == 15)
 	return (error("Error : do not use 'echo | ./allum1'\n", 10));
     }
   line--;
-  if ((matches = matches_test(array[line])) == 42)
+  if ((matches = matches_test(array[line], blue)) == 42)
     {
       test = 1;
       return (1);
     }
-  my_printf(blue bold "Player removed %i match(es) from line %i\n" normal,
-	    matches, line + 1);
+  player_1_message_end(pvp, matches, line);
   array[line] = array[line] - matches;
   my_display(array);
   test = 0;
@@ -125,28 +125,30 @@ int		ia_turn(int *array)
   return (my_display(array));
 }
 
-int		main()
+int		main(int ac, char **av)
 {
   int		array[4] = {1, 3, 5, 7};
-  int		end;
   int		test_error;
+  int		pvp;
 
   my_display(array);
-  end = array[0] + array[1] + array[2] + array[3];
+  if (av[1] == NULL)
+    pvp = 1;
+  else
+    pvp = my_same_str(av[1], "pvp");
   while (42)
     {
-      while ((test_error = player_turn(array)) != 0)
+      while ((test_error = player_turn(array, pvp)) != 0)
 	{
 	  if (test_error == 10)
 	    return (42);
 	}
-      end = array[0] + array[1] + array[2] + array[3];
-      if (end == 0)
-	return (ending("You lost, too bad..\n\n"));
+      if ((array[0] + array[1] + array[2] + array[3]) == 0)
+	return (ending_bonus(1, pvp));
       my_printf("\n");
-      ia_turn(array);
-      end = array[0] + array[1] + array[2] + array[3];
-      if (end == 0)
-	return (ending("I lost.. snif.. but I’ll get you next time!!\n\n"));
+      if ((my_second_player(av[1], test_error, array)) == 42)
+	return (42);
+      if ((array[0] + array[1] + array[2] + array[3]) == 0)
+	return (ending_bonus(2, pvp));
     }
 }

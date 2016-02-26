@@ -5,10 +5,11 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 14:55:03 2016 jouvel_a
-** Last update Fri Feb 19 14:49:48 2016 jouvel_a
+** Last update Fri Feb 26 04:01:48 2016 jouvel_a
 */
 
 #include "include.h"
+#include "allum1.h"
 
 void	first_line(int matches)
 {

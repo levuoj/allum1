@@ -5,10 +5,11 @@
 ** Login   <jouvel_a@epitech.net>
 **
 ** Started on  Mon Feb 15 14:55:03 2016 jouvel_a
-** Last update Fri Feb 19 14:25:34 2016 jouvel_a
+** Last update Fri Feb 26 03:59:35 2016 jouvel_a
 */
 
 #include "include.h"
+#include "allum1_bonus.h"
 
 #define yellow "\033[00;33m"
 #define normal "\033[00m"
